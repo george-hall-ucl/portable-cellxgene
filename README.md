@@ -68,7 +68,7 @@ installed.
    (i.e. anndata) files you want to include. We discuss below some to consider
    when converting Seurat objects to `.h5ad`.
 5. Download the script
-   [launch_cellxgene.sh](https://github.com/george-hall-ucl/portable-cellxgene/blob/main/launch_cellxgene.sh).
+   [launch_cellxgene.sh](https://raw.githubusercontent.com/george-hall-ucl/portable-cellxgene/main/launch_cellxgene.sh).
 6. Open Platypus and carry out the following steps (some will be automatic):
     * 6.1 Name the app (we suggest `portable-cellxgene`)
     * 6.2 Ensure "Script Type" is `sh` and that it points to the `sh` binary
