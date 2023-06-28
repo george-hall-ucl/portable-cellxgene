@@ -92,6 +92,19 @@ Following Step 6, your Platypus window should look be similar to this:
   <img src="images/platypus_window.png" width="600">
 </p>
 
+### Troubleshooting
+
+If your app does not work, check that (in no particular order):
+
+* The `.h5ad` data files are in the directory stored as `CELLXGENE_DATA` in
+  `launch_cellxgene.sh`.
+* The Conda environment's name matches that stored as `CELLXGENE_LOCATION` in
+  `launch_cellxgene.sh`.
+* A `cellxgene` binary is at the location stored as `CELLXGENE_LOCATION` in
+  `launch_cellxgene.sh`.
+* You pointed Platypus to the correct script.
+* You bundled the data files and Conda environment in Platypus.
+
 ### Converting Seurat objects to `.h5ad` files
 
 TODO.
