@@ -65,8 +65,8 @@ installed.
       `cellxgene_portable`. This contains the Python binaries and packages
       necessary to run `cellxgene` and `cellxgene-gateway`.
 4. Create a directory called `cellxgene_datasets` that contains all the `.h5ad`
-   (i.e. anndata) files you want to include. We discuss below some to consider
-   when converting Seurat objects to `.h5ad`.
+   (i.e. anndata) files you want to include. We discuss below how to avoid
+   genes disappearing when converting Seurat objects to `.h5ad`.
 5. Download the script
    [launch_cellxgene.sh](https://raw.githubusercontent.com/george-hall-ucl/portable-cellxgene/main/launch_cellxgene.sh).
 6. Open Platypus and carry out the following steps (some will be automatic):
@@ -107,7 +107,24 @@ If your app does not work, check that (in no particular order):
 
 ### Converting Seurat objects to `.h5ad` files
 
-TODO.
+By default, the `.h5ad` files created by the standard Seurat -> Anndata
+conversion process (detailed
+[here](https://mojaveazure.github.io/seurat-disk/articles/convert-anndata.html))
+contain only the highly variable genes, and therefore other genes cannot be
+annotated in `cellxgene`. This can be fixed by replacing the data stored in the
+`scale.data` slot of the Seurat object with the entire gene expression matrix.
+This object can then be converted to a `.h5ad` file using the guide linked
+above. Namely:
+
+```{r}
+# For each Seurat object you want to include in portable-cellxgene:
+# Assume Seurat object is called "cells"
+library(Seurat)
+library(SeuratDisk)
+cells@assays$RNA@scale.data <- as.matrix(GetAssayData(cells))
+SaveH5Seurat(object = cells, filename = "cells.h5Seurat")
+Convert(source = "cells.h5Seurat", dest = "h5ad")
+```
 
 ## How to use `cellxgene`
 
