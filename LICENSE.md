@@ -1,3 +1,6 @@
+Portable-CELLxGENE is copyright University College London (2023-). It is
+licensed under the GNU General Public License v3:
+
 GNU General Public License
 ==========================
 
