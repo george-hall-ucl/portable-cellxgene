@@ -1,0 +1,3 @@
+[submodule "cellxgene-gateway-beautify"]
+	path = cellxgene-gateway-beautify
+	url = https://github.com/george-hall-ucl/cellxgene-gateway-beautify.git
