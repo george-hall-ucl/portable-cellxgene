@@ -11,7 +11,7 @@ analysis of single-cell data without installing extra software.
    (under "Assets").
    <details>
    <summary>Click for example</summary>
-   <kbd>![Image showing location of the executable download.](images/screenshot_download.png)</kbd>
+   <kbd><img src="images/screenshot_download.png" alt="Image showing location of the executable download."></kbd>
    </details>
 2. Double click on the downloaded file to extract its contents. It should
    contain a single file: `portable-cellxgene.app`. Move this file to a sensible
@@ -23,7 +23,7 @@ analysis of single-cell data without installing extra software.
    click "Cancel" and try to open again via right clicking.
    <details>
    <summary>Click for example</summary>
-   <kbd>![Image showing how to allow executable to be opened.](images/screenshot_fix.png)</kbd>
+   <kbd><img src="images/screenshot_fix.png" alt="Image showing how to allow executable to be opened."></kbd>
    </details>
 4. Portable-CELLxGENE can now be run by double-clicking on the `.app` file. It
    can made discoverable in Launchpad by dragging it into your `Applications`
@@ -37,7 +37,7 @@ analysis of single-cell data without installing extra software.
    them in the file browser and click "Open".
    <details>
    <summary>Click for example</summary>
-   <kbd>![Image showing how to select dataset.](images/screenshot_dataset_selection.png)</kbd>
+   <kbd><img src="images/screenshot_dataset_selection.png", alt="Image showing how to select dataset."></kbd>
    </details>
 2. A page listing the datasets should open in your browser. If it does not open
    after a minute or two, then navigate to
