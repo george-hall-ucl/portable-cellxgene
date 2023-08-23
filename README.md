@@ -5,8 +5,35 @@ analysis of single-cell data without installing extra software.
 
 ## Installation
 
+### MacOS
+
+1. Download `Install-Portable-CELLxGENE-MacOS.dmg` from the [latest release](https://github.com/george-hall-ucl/portable-cellxgene/releases/latest) (under "Assets").
+   <details>
+   <summary>Click for example</summary>
+   <kbd><img src="images/screenshot_new_link.jpg" alt="Image showing location of the executable download."></kbd>
+   </details>
+2. Double click on the downloaded file to open it.
+3. Drag the app icon into the "Applications" folder.
+4. Portable-CELLxGENE can now be run like any other program.
+5. Close the installation window.
+
+Since the app is not signed, MacOS may not initially allow it to be opened. To
+solve this, right click on the app n ~/Finder and select "Open". It is likely
+that an error will occur saying that it cannot be opened for security reasons.
+Click "Open" anyway. If you see an error message with no "Open" button, click
+"Cancel" and try to open again via right clicking. The operating system should
+remember that you want to make an exception for this app (i.e. you only need to
+take this step once).
+<details>
+<summary>Click for example</summary>
+<kbd><img src="images/screenshot_fix.png" alt="Image showing how to allow executable to be opened."></kbd>
+</details>
+
+
+### Windows
+
 1. Download the zip file containing the latest release
-   (`portable-cellxgene.app.zip`) from
+   (`Portable-CELLxGENE_Windows.zip`) from
    [here](https://github.com/george-hall-ucl/portable-cellxgene/releases/latest)
    (under "Assets").
    <details>
@@ -14,21 +41,8 @@ analysis of single-cell data without installing extra software.
    <kbd><img src="images/screenshot_download.png" alt="Image showing location of the executable download."></kbd>
    </details>
 2. Double click on the downloaded file to extract its contents. It should
-   contain a single file: `portable-cellxgene.app`. Move this file to a sensible
+   contain a `.bat` file and a folder `xxx`. Move these files to a sensible
    location. You can delete the zip file.
-3. Right click on the `.app` file and select "Open". It is likely that an error
-   will occur saying that it cannot be opened for security reasons. Click
-   "Open" anyway. The operating system should remember that you want to make an
-   exception for this app. If you see an error message with no "Open" button,
-   click "Cancel" and try to open again via right clicking.
-   <details>
-   <summary>Click for example</summary>
-   <kbd><img src="images/screenshot_fix.png" alt="Image showing how to allow executable to be opened."></kbd>
-   </details>
-4. Portable-CELLxGENE can now be run by double-clicking on the `.app` file. It
-   can made discoverable in Launchpad by dragging it into your `Applications`
-   folder.
-
 
 ## Running `portable-cellxgene`
 
