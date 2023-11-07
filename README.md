@@ -1,41 +1,50 @@
 # Portable-CELLxGENE
 
-Portable-CELLxGENE is an executable version of CELLxGENE-gateway to allow
-analysis of single-cell data without installing extra software.
+Portable-CELLxGENE is an executable version of
+[CELLxGENE-gateway](https://github.com/Novartis/cellxgene-gateway) to allow
+single-cell transcriptomic data to be annotated using
+[CELLxGENE](https://github.com/Novartis/cellxgene-gateway) without installing
+extra software.
+
+This software is currently in the beta stage of development, meaning that there
+may be some issues with installation and usage. Please report any such issues
+[here](https://github.com/george-hall-ucl/portable-cellxgene/issues).
 
 ## Installation
 
 ### MacOS
 
 1. Download `Install-Portable-CELLxGENE-MacOS.dmg` from the [latest release](https://github.com/george-hall-ucl/portable-cellxgene/releases/latest) (under "Assets").
-   <details>
-   <summary>Click for example</summary>
-   <kbd><img src="images/screenshot_new_link.jpg" alt="Image showing location of the executable download."></kbd>
-   </details>
 2. Double click on the downloaded file to open it.
-3. Drag the app icon into the "Applications" folder.
+3. Drag the app's icon into the `Applications` folder.
 4. Portable-CELLxGENE can now be run like any other program.
 5. Close the installation window.
 
-Since the app is not signed, MacOS may not initially allow it to be opened. To
-solve this, right click on the app n ~/Finder and select "Open". It is likely
-that an error will occur saying that it cannot be opened for security reasons.
-Click "Open" anyway. If you see an error message with no "Open" button, click
-"Cancel" and try to open again via right clicking. The operating system should
-remember that you want to make an exception for this app (i.e. you only need to
-take this step once).
 <details>
-<summary>Click for example</summary>
-<kbd><img src="images/screenshot_fix.png" alt="Image showing how to allow executable to be opened."></kbd>
+<summary>Click to reveal video of installation process</summary>
+<kbd><img src="images/Portable-CELLxGENE_MacOS_Installation.gif" alt="Gif showing installation process on MacOS."></kbd>
 </details>
 
+_Note for users during the beta:_
+
+Since the app is not signed, MacOS may not initially allow it to be opened. To
+solve this, right click on the app in Finder (it should be in the
+`Applications` folder) and select `Open`. It is likely that an error will occur
+saying that it cannot be opened for security reasons.  Click `Open` anyway. If
+you see an error message with no `Open` button, click `Cancel` and try to open
+again via right clicking. You should only need to do this once.
+
+<details>
+<summary>Click to reveal video of this process</summary>
+<kbd><img src="images/PCxG_MacOS_Bypass.gif" alt="Gif showing process to unblock application on MacOS."></kbd>
+</details>
 
 ### Windows
 
 1. Download the zip file containing the latest release
    (`Portable-CELLxGENE_Windows.zip`) from
    [here](https://github.com/george-hall-ucl/portable-cellxgene/releases/latest)
-   (under "Assets").
+   (under `Assets`).
    <details>
    <summary>Click for example</summary>
    <kbd><img src="images/screenshot_download.png" alt="Image showing location of the executable download."></kbd>
@@ -44,7 +53,14 @@ take this step once).
    contain a `.bat` file and a folder `xxx`. Move these files to a sensible
    location. You can delete the zip file.
 
-## Running `portable-cellxgene`
+_Note for users during the beta:_
+
+Since the software is not signed, Windows Defender SmartScreen may try to block
+its execution. If this happens, you will see a pop-up saying "Windows protected
+your PC". Click `More info` and then `Run anyway`. You should only need to do
+this once.
+
+## Running Portable-CELLxGENE
 
 1. A drag and drop window will open along with a file browser. Either drag and
    drop the folder containing your `.h5ad` files into the window, or select
@@ -58,7 +74,7 @@ take this step once).
    [http://127.0.0.1:5005/portable_home.html](http://127.0.0.1:5005/portable_home.html)
    yourself.
 3. Follow the instructions on the homepage.
-4. Once you are finished, close the `cellxgene` browser tab(s) and quit the
+4. Once you are finished, close the CELLxGENE browser tab(s) and quit the
    app.
 
 ## Distributing your data
@@ -66,7 +82,7 @@ take this step once).
 To distribute your data using this app, simply create a folder containing
 `.h5ad` files of the datasets of interest. Rendered notebooks can be made
 accessible to the user by storing them in a folder named `rendered_notebooks`.
-The recipient needs to download the portable-cellxgene app and run it using the
+The recipient needs to download the Portable-CELLxGENE app and run it using the
 above guide.
 
 ### Converting Seurat objects to `.h5ad` files
@@ -75,13 +91,13 @@ By default, the `.h5ad` files created by the standard Seurat -> Anndata
 conversion process (detailed
 [here](https://mojaveazure.github.io/seurat-disk/articles/convert-anndata.html))
 contain only the highly variable genes, and therefore other genes cannot be
-annotated in `cellxgene`. This can be fixed by replacing the data stored in the
+annotated in `CELLxGENE`. This can be fixed by replacing the data stored in the
 `scale.data` slot of the Seurat object with the entire gene expression matrix.
-This object can then be converted to a `.h5ad` file using the guide linked
-above. Namely:
+This object can then be converted to a `.h5ad` file using the process detailed
+in the link above. Putting this together:
 
 ```{r}
-# For each Seurat object you want to include in portable-cellxgene:
+# For each Seurat object you want to include in Portable-CELLxGENE:
 # Assume Seurat object is called "cells"
 library(Seurat)
 library(SeuratDisk)
@@ -90,10 +106,14 @@ SaveH5Seurat(object = cells, filename = "cells.h5Seurat")
 Convert(source = "cells.h5Seurat", dest = "h5ad")
 ```
 
-## How to use `cellxgene`
+## How to use CELLxGENE
 
-TODO. Relatively complete guides are available online, e.g.
-[here](https://icbi-lab.github.io/cellxgene-user-guide/).
+There are many guides on how to use CELLxGENE available online, for example a
+basic introduction can be found
+[here](https://icbi-lab.github.io/cellxgene-user-guide/). The official
+documentation of CELLxGENE is
+[here](https://cellxgene.cziscience.com/docs/01__CellxGene), which gives
+in-depth information on its use.
 
 ## Licence
 
@@ -111,3 +131,9 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+## Licenses of other software
+
+Portable-CELLxGENE contains many other pieces of software. The licensing
+information of these constituents can be found at the bottom of the main page
+of the dataset browser.
