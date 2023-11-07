@@ -62,20 +62,28 @@ this once.
 
 ## Running Portable-CELLxGENE
 
+<details>
+<summary>Click to reveal video of basic Portable-CELLxGENE usage</summary>
+<kbd><img src="images/PCxG_MacOS_demo.gif" alt="Gif showing basic Portable-CELLxGENE usage."></kbd>
+</details>
+
 1. A drag and drop window will open along with a file browser. Either drag and
    drop the folder containing your `.h5ad` files into the window, or select
    them in the file browser and click "Open".
-   <details>
-   <summary>Click for example</summary>
-   <kbd><img src="images/screenshot_dataset_selection.png", alt="Image showing how to select dataset."></kbd>
-   </details>
 2. A page listing the datasets should open in your browser. If it does not open
    after a minute or two, then navigate to
    [http://127.0.0.1:5005/portable_home.html](http://127.0.0.1:5005/portable_home.html)
-   yourself.
+   yourself. If the page opened automatically too early, you may need to
+   refresh it.
 3. Follow the instructions on the homepage.
 4. Once you are finished, close the CELLxGENE browser tab(s) and quit the
    app.
+
+Note: Each annotation session will continue running in the background until
+either the Portable-CELLxGENE app is terminated or the session is closed from
+the "View running sessions" page (see end of above video). For large datasets,
+this may slow down your computer so it is advisable to terminate them once you
+are finished.
 
 ## Distributing your data
 
@@ -115,7 +123,7 @@ documentation of CELLxGENE is
 [here](https://cellxgene.cziscience.com/docs/01__CellxGene), which gives
 in-depth information on its use.
 
-## Licence
+## Licensing
 
 Copyright (C) 2023 University College London
 
@@ -132,8 +140,10 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-## Licenses of other software
+### Licenses of constituent software
 
 Portable-CELLxGENE contains many other pieces of software. The licensing
 information of these constituents can be found at the bottom of the main page
 of the dataset browser.
+
+Development of CELLxGENE is funded by the Chan Zuckerberg Initiative.
