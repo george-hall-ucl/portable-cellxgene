@@ -123,6 +123,18 @@ documentation of CELLxGENE is
 [here](https://cellxgene.cziscience.com/docs/01__CellxGene), which gives
 in-depth information on its use.
 
+## Contributing guidelines
+
+You can contribute to Portable-CELLxGENE by submitting a
+[pull request](https://github.com/george-hall-ucl/portable-cellxgene/pulls).
+Before spending time working on a contribution, you should check whether anyone
+else has submitted an
+[issue](https://github.com/george-hall-ucl/portable-cellxgene/issues)
+and is working on the same thing.
+
+All contributors are expected to adhere to our
+[Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## Licensing
 
 Copyright (C) 2023 University College London
