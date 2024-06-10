@@ -6,8 +6,9 @@ single-cell transcriptomic data to be annotated using
 [CELLxGENE](https://github.com/Novartis/cellxgene-gateway) without installing
 extra software.
 
-This software is currently in the beta stage of development, meaning that there
-may be some issues with installation and usage. Please report any such issues
+For intel-based MacOS and Windows, this software is currently in the beta stage
+of development, meaning that there may be some extra steps. Please report any
+such issues
 [here](https://github.com/george-hall-ucl/portable-cellxgene/issues).
 
 ## Installation
