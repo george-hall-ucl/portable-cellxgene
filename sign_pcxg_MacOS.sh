@@ -40,7 +40,7 @@ DEV_ID_APP_CERT="$3"
 echo "Step 1: Signing the resources inside the app"
 cd Portable-CELLxGENE.app/Contents/Resources/pcxg_conda_env_MacOS
 find bin -type f | xargs -n1 codesign -f -o runtime --timestamp --entitlements ../../../../../entitlements.plist --sign "${DEV_ID_APP_CERT}"
-find bin -type f | xargs -n1 codesign -f -o runtime --timestamp --entitlements ../../../../../entitlements.plist --sign "${DEV_ID_APP_CERT}"
+find . -name "*.dylib" -o -name "*.so" -type f | xargs -n1 codesign -f -o runtime --timestamp --entitlements ../../../../../entitlements.plist --sign "${DEV_ID_APP_CERT}"
 
 echo ""
 
@@ -67,7 +67,7 @@ appdmg appdmg_config.json "$DMG_NAME"
 rm -f appdmg_config.json
 
 echo "Step 4: Signing the .dmg for notarization"
-codesign -f --sign "${DEV_ID_APP_CERT}" --entitlements ../entitlements.plist --timestamp "$DMG_NAME" 2> /dev/null
+codesign -f --sign "${DEV_ID_APP_CERT}" --entitlements ../entitlements.plist --timestamp "$DMG_NAME"
 
 echo "Step 5: Submitting for notarization"
 xcrun notarytool submit "$DMG_NAME" --keychain-profile ${NOTARYTOOL_KEYCHAIN_PROFILE} --wait
