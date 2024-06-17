@@ -6,16 +6,15 @@ single-cell transcriptomic data to be annotated using
 [CELLxGENE](https://github.com/Novartis/cellxgene-gateway) without installing
 extra software.
 
-For intel-based MacOS and Windows, this software is currently in the beta stage
-of development, meaning that there may be some extra steps. Please report any
-such issues
+For Windows, this software is currently in the beta stage of development,
+meaning that there may be some extra steps. Please report any such issues
 [here](https://github.com/george-hall-ucl/portable-cellxgene/issues).
 
 ## Installation
 
 ### MacOS
 
-1. Download `Install-Portable-CELLxGENE-MacOS.dmg` from the [latest release](https://github.com/george-hall-ucl/portable-cellxgene/releases/latest) (under "Assets").
+1. Download either `Install-Portable-CELLxGENE-v1-4-MacOS-apple-silicon.dmg` or `Install-Portable-CELLxGENE-v1-4-MacOS-intel.dmg` from the [latest release](https://github.com/george-hall-ucl/portable-cellxgene/releases/latest) (under "Assets") depending on whether your computer has a newer, Apple-silicon processor (M1, M2, M3), or an older, intel-based one.
 2. Double click on the downloaded file to open it.
 3. Drag the app's icon into the `Applications` folder.
 4. Portable-CELLxGENE can now be run like any other program.
@@ -24,20 +23,6 @@ such issues
 <details>
 <summary>Click to reveal video of installation process</summary>
 <kbd><img src="images/Portable-CELLxGENE_MacOS_Installation.gif" alt="Gif showing installation process on MacOS."></kbd>
-</details>
-
-_Note for users during the beta:_
-
-Since the app is not signed, MacOS may not initially allow it to be opened. To
-solve this, right click on the app in Finder (it should be in the
-`Applications` folder) and select `Open`. It is likely that an error will occur
-saying that it cannot be opened for security reasons.  Click `Open` anyway. If
-you see an error message with no `Open` button, click `Cancel` and try to open
-again via right clicking. You should only need to do this once.
-
-<details>
-<summary>Click to reveal video of this process</summary>
-<kbd><img src="images/PCxG_MacOS_Bypass.gif" alt="Gif showing process to unblock application on MacOS."></kbd>
 </details>
 
 ### Windows
