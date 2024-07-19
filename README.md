@@ -1,7 +1,7 @@
 <center>
-<img src="images/favicon_new_export.png" alt="Portable-CELLxGENE icon." width = 10% style="display: inline-block; margin-right: 50px;">
-<h1 style="display: inline-block; vertical-align: top">Portable-CELLxGENE</h1>
-<img src="images/favicon_new_export.png" alt="Portable-CELLxGENE icon." width = 10% style="display: inline-block; margin-left: 50px;">
+<img src="images/favicon_new_export.png" alt="Portable-CELLxGENE icon." width = 10%>
+<h1 style="vertical-align:top; margin-top:-3px">Portable-CELLxGENE</h1>
+<br>
 </center>
 
 Portable-CELLxGENE is an executable version of
