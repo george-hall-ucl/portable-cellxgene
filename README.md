@@ -140,7 +140,7 @@ All contributors are expected to adhere to our
 
 ## Building and Releasing
 
-### MacOS
+### MacOS
 
 #### Building
 
