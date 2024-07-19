@@ -1,8 +1,4 @@
-<center>
-<img src="images/favicon_new_export.png" alt="Portable-CELLxGENE icon." width = 10%>
-<h1 style="vertical-align:top; margin-top:-3px">Portable-CELLxGENE</h1>
-<br>
-</center>
+# <img align="right" src="images/favicon_new_export.png" width=15%> Portable-CELLxGENE
 
 Portable-CELLxGENE is an executable version of
 [CELLxGENE](https://github.com/chanzuckerberg/cellxgene) and
