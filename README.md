@@ -1,24 +1,29 @@
-# Portable-CELLxGENE
+<center>
+<img src="images/favicon_new_export.png" alt="Portable-CELLxGENE icon." width = 10% style="display: inline-block; margin-right: 50px;">
+<h1 style="display: inline-block; vertical-align: top">Portable-CELLxGENE</h1>
+<img src="images/favicon_new_export.png" alt="Portable-CELLxGENE icon." width = 10% style="display: inline-block; margin-left: 50px;">
+</center>
 
 Portable-CELLxGENE is an executable version of
+[CELLxGENE](https://github.com/chanzuckerberg/cellxgene) and
 [CELLxGENE-gateway](https://github.com/Novartis/cellxgene-gateway) to allow
-single-cell transcriptomic data to be annotated using
-[CELLxGENE](https://github.com/Novartis/cellxgene-gateway) without installing
-extra software.
-
-For Windows, this software is currently in the beta stage of development,
-meaning that there may be some extra steps. Please report any such issues
-[here](https://github.com/george-hall-ucl/portable-cellxgene/issues).
+single-cell transcriptomic data to be annotated using without using the command
+line or installing extra software.
 
 ## Installation
 
 ### MacOS
 
-1. Download either `Install-Portable-CELLxGENE-v1-4-MacOS-apple-silicon.dmg` or `Install-Portable-CELLxGENE-v1-4-MacOS-intel.dmg` from the [latest release](https://github.com/george-hall-ucl/portable-cellxgene/releases/latest) (under "Assets") depending on whether your computer has a newer, Apple-silicon processor (M1, M2, M3), or an older, intel-based one.
+1. If your computer has an Apple M-series chip, download the installer from
+   [here](https://github.com/george-hall-ucl/portable-cellxgene/releases/download/v1.4/Install-Portable-CELLxGENE-v1-4-MacOS-apple-silicon.dmg).
+   If it has an intel chip, download the installer from
+   [here](https://github.com/george-hall-ucl/portable-cellxgene/releases/download/v1.4/Install-Portable-CELLxGENE-v1-4-MacOS-intel.dmg).
+   (to determine whether your Mac has an Apple M-series chip or an intel chip,
+   click the Apple logo in the top left corner of your screen, go to "About
+   This Mac" and look under "Chip").
 2. Double click on the downloaded file to open it.
 3. Drag the app's icon into the `Applications` folder.
 4. Portable-CELLxGENE can now be run like any other program.
-5. Close the installation window.
 
 <details>
 <summary>Click to reveal video of installation process</summary>
@@ -27,40 +32,39 @@ meaning that there may be some extra steps. Please report any such issues
 
 ### Windows
 
-1. Download the zip file containing the latest release
-   (`Portable-CELLxGENE_Windows.zip`) from
-   [here](https://github.com/george-hall-ucl/portable-cellxgene/releases/latest)
-   (under `Assets`).
-   <details>
-   <summary>Click for example</summary>
-   <kbd><img src="images/screenshot_download.png" alt="Image showing location of the executable download."></kbd>
-   </details>
-2. Double click on the downloaded file to extract its contents. It should
-   contain a `.bat` file and a folder `xxx`. Move these files to a sensible
-   location. You can delete the zip file.
+1. Download the installation program from
+   [here](https://github.com/george-hall-ucl/portable-cellxgene/releases/download/v1.4/Install-Portable-CELLxGENE-Windows_v1_4.exe).
+2. Double click on the downloaded file to run it. It should download and
+   install Portable-CELLxGENE.
 
-_Note for users during the beta:_
-
-Since the software is not signed, Windows Defender SmartScreen may try to block
-its execution. If this happens, you will see a pop-up saying "Windows protected
+Since the software is new, Windows Defender SmartScreen may try to block its
+execution. If this happens, you will see a pop-up saying "Windows protected
 your PC". Click `More info` and then `Run anyway`. You should only need to do
-this once.
+this once for the installer and once for the program itself.
+
+<details>
+<summary>Click to reveal images showing how to bypass SmartScreen</summary>
+    <center>
+    <kbd><img src="images/smartscreen1.png" alt="Image showing the first step of disabling SmartScreen." width=400></kbd>
+    <kbd><img src="images/smartscreen2.png" alt="Image showing the second step of disabling SmartScreen." width=400></kbd>
+    </center>
+</details>
 
 ## Running Portable-CELLxGENE
 
 <details>
 <summary>Click to reveal video of basic Portable-CELLxGENE usage</summary>
+Recorded in MacOS, but the process is similar in Windows.
 <kbd><img src="images/PCxG_MacOS_demo.gif" alt="Gif showing basic Portable-CELLxGENE usage."></kbd>
 </details>
 
-1. A drag and drop window will open along with a file browser. Either drag and
-   drop the folder containing your `.h5ad` files into the window, or select
-   them in the file browser and click "Open".
+1. A file browser will open. Navigate to the folder containing your `.h5ad` and
+   click "Open".
 2. A page listing the datasets should open in your browser. If it does not open
-   after a minute or two, then navigate to
+   after a minute, then navigate to
    [http://127.0.0.1:5005/portable_home.html](http://127.0.0.1:5005/portable_home.html)
-   yourself. If the page opened automatically too early, you may need to
-   refresh it.
+   yourself. If the page opened automatically but is not displaying anything,
+   then you may need to refresh it.
 3. Follow the instructions on the homepage.
 4. Once you are finished, close the CELLxGENE browser tab(s) and quit the
    app.
@@ -108,6 +112,23 @@ basic introduction can be found
 documentation of CELLxGENE is
 [here](https://cellxgene.cziscience.com/docs/01__CellxGene), which gives
 in-depth information on its use.
+
+## Uninstallation
+
+### MacOS
+
+Navigate to the `Applications` folder in Finder and delete Portable-CELLxGENE.
+
+### Windows
+
+1. Open the command prompt (Windows key + "R", then type `cmd` and hit enter).
+2. Copy the following into the command prompt and hit enter.
+
+```
+rmdir /q /s "%LOCALAPPDATA%\Portable-CELLxGENE"
+del "%HOMEPATH%\Desktop\Portable-CELLxGENE.lnk"
+del "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Portable-CELLxGENE.lnk"
+```
 
 ## Contributing guidelines
 
@@ -182,6 +203,37 @@ The release script will store its outputs in a new directory called
 `Portable_CELLxGENE_Build_Dir_` appended with a timestamp of when the script
 was executed. This will contain the `.app` and `.dmg` generated by the above
 scripts.
+
+### Windows
+
+1. Download and extract the latest pack of build assets from
+   [here](https://github.com/george-hall-ucl/Portable-CELLxGENE-assets/releases/download/v1.4/windows_build_assets.zip). Once extracted, the folder should contain two directories:
+
+    ```
+    windows_build_assets
+    ├── app
+    │   ├── Portable-CELLxGENE.bat
+    │   └── favicon.ico
+    └── install
+        ├── Install-Portable-CELLxGENE-Windows.ps1
+        └── installer_favicon.ico
+    ```
+2. Download and extract the latest Windows conda environment from
+   [here](https://github.com/george-hall-ucl/Portable-CELLxGENE-assets/releases/download/v1.4/pcxg_1_3_windows.zip).
+3.  Build the app's `.exe`. To do this, compile `Portable-CELLxGENE.bat` into a
+    `.exe` using the `bat2exe` tool. You should be able just to point this tool
+    to the `windows_build_assets\app` directory and it will take care of the
+    rest.
+4. Sign the `.exe` produced in the previous step using signtool.
+   `signtool sign /tr http://timestamp.sectigo.com /td sha256 /fd sha256 /a Portable-CELLxGENE-Windows.exe`
+5. Zip together the signed `.exe` and the conda environment from Step 2 and
+   upload to the assets repo.
+6. Build the installer using the `ps2exe` tool in PowerShell. Sign the `.exe`
+   it outputs. Note that you may need to update the download path used by the
+   script to point to the new bundle created in Step 5.
+   `ps2exe -inputFile .\Install-Portable-CELLxGENE-Windows.ps1 -iconFile .\installer_favicon.ico -noConsole -exitOnCancel`
+   `signtool sign /tr http://timestamp.sectigo.com /td sha256 /fd sha256 /a Install-Portable-CELLxGENE-Windows.exe`
+7. Upload the installer `.exe` to the main github repo.
 
 ## Licensing
 
