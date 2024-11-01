@@ -14,7 +14,6 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Prerequisites:
-#   * conda-pack. Can be installed with `conda install conda-pack`.
 #   * Platypus. Can be installed with `brew install --cask platypus`. The
 #       commandline tools must then be installed via Platypus' settings menu.
 #   * appdmg: Can be installed with `npm install -g appdmg`
@@ -30,7 +29,7 @@ fi
 
 BUILD_SCRIPT="$1"
 SIGNING_SCRIPT="$2"
-CONDA_ENV_DIR="$3"
+CONDA_ENV_TAR_GZ="$3"
 ICON_PATH="$4"
 LAUNCH_CELLXGENE_SH="$5"
 DMG_BACKGROUND_PNG="$6"
@@ -51,7 +50,7 @@ mkdir "${OUT_DIR}"
 cd "${OUT_DIR}"
 
 echo "RUNNING build_script_MacOS.sh"
-sh ../"${BUILD_SCRIPT}" ../"${CONDA_ENV_DIR}" ../"${ICON_PATH}" ../"${LAUNCH_CELLXGENE_SH}"
+sh ../"${BUILD_SCRIPT}" ../"${CONDA_ENV_TAR_GZ}" ../"${ICON_PATH}" ../"${LAUNCH_CELLXGENE_SH}"
 
 echo "RUNNING sign_and_bundle_app.sh"
 sh ../"${SIGNING_SCRIPT}" ../"${DMG_BACKGROUND_PNG}" "${NOTARYTOOL_KEYCHAIN_PROFILE}" "${DEV_ID_APP_CERT}"

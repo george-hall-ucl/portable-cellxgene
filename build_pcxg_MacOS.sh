@@ -27,16 +27,18 @@ if [ "$#" -ne "${NUM_PARAMS}" ]; then
   exit 1
 fi
 
-CONDA_ENV_DIR=$1
+CONDA_ENV_TAR_GZ=$1
 ICON_PATH=$2
 LAUNCH_CELLXGENE_SH=$3
 
 APP_NAME="Portable-CELLxGENE"
 echo "Building ${APP_NAME}"
 
+# Download latest packed conda environment from
+# https://github.com/george-hall-ucl/Portable-CELLxGENE-assets/releases and set
+# PACKED_CONDA_ENV_NAME to the base filename (i.e. the part before ".tar.gz").
 PACKED_CONDA_ENV_NAME="pcxg_conda_env_MacOS"
-conda-pack --ignore-missing-files --ignore-editable-packages --output "${PACKED_CONDA_ENV_NAME}".tar.gz --prefix "${CONDA_ENV_DIR}"
-mkdir "${PACKED_CONDA_ENV_NAME}" && tar --directory "${PACKED_CONDA_ENV_NAME}" -xzvf "${PACKED_CONDA_ENV_NAME}".tar.gz
+mkdir "${PACKED_CONDA_ENV_NAME}" && tar --directory "${PACKED_CONDA_ENV_NAME}" -xzvf "${CONDA_ENV_TAR_GZ}"
 
 echo "Copying launch script"
 cp "${LAUNCH_CELLXGENE_SH}" launch_cellxgene.sh
