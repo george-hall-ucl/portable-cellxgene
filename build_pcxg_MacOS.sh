@@ -43,7 +43,7 @@ mkdir "${PACKED_CONDA_ENV_NAME}" && tar --directory "${PACKED_CONDA_ENV_NAME}" -
 echo "Copying launch script"
 cp "${LAUNCH_CELLXGENE_SH}" launch_cellxgene.sh
 
-VERSION=$(cat "${PACKED_CONDA_ENV_NAME}/lib/python3.7/site-packages/cellxgene_gateway/static/js/version_number.js")
+VERSION=$(cat "${PACKED_CONDA_ENV_NAME}/lib/python3.11/site-packages/cellxgene_gateway/static/js/version_number.js")
 VERSION=$(echo "${VERSION}" | cut -c 17- | rev | cut -c 4- | rev)
 
 echo "Building .app with Platypus"
