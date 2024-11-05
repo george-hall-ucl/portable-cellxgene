@@ -11,9 +11,9 @@ line or installing extra software.
 ### MacOS
 
 1. If your computer has an Apple M-series chip, download the installer from
-   [here](https://github.com/george-hall-ucl/portable-cellxgene/releases/download/v1.4/Install-Portable-CELLxGENE-v1-4-MacOS-apple-silicon.dmg).
+   [here](https://github.com/george-hall-ucl/portable-cellxgene/releases/latest/download/Install-Portable-CELLxGENE-MacOS-apple-silicon.dmg).
    If it has an intel chip, download the installer from
-   [here](https://github.com/george-hall-ucl/portable-cellxgene/releases/download/v1.4/Install-Portable-CELLxGENE-v1-4-MacOS-intel.dmg).
+   [here](https://github.com/george-hall-ucl/portable-cellxgene/releases/latest/download/Install-Portable-CELLxGENE-MacOS-intel.dmg).
    (to determine whether your Mac has an Apple M-series chip or an intel chip,
    click the Apple logo in the top left corner of your screen, go to "About
    This Mac" and look under "Chip").
