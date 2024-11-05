@@ -19,28 +19,11 @@ line or installing extra software.
    This Mac" and look under "Chip").
 2. Double click on the downloaded file to open it.
 3. Drag the app's icon into the `Applications` folder.
-4. Portable-CELLxGENE can now be run like any other program (see note below if it fails to open).
+4. Portable-CELLxGENE can now be run like any other program.
 
 <details>
 <summary>Click to reveal video of installation process</summary>
 <kbd><img src="images/Portable-CELLxGENE_MacOS_Installation.gif" alt="Gif showing installation process on MacOS."></kbd>
-</details>
-
-_Note for MacOS users if app fails to open:_
-
-We are currently experience issues with Apple's security software incorrectly
-blocking the app. Whilst we resolve these problems, the following workaround
-may be necessary when opening the app for the first time. To solve this, right
-click on the app in Finder (it should be in the `Applications` folder,
-available in the left-hand toolbar) and select `Open`. It is likely that an
-error will occur saying that it cannot be opened for security reasons.  Click
-`Open` anyway. If you see an error message with no `Open` button, click
-`Cancel` and try to open again via right clicking.  You should only need to do
-this once.
-
-<details>
-<summary>Click to reveal video of this process</summary>
-<kbd><img src="images/PCxG_MacOS_Bypass.gif" alt="Gif showing process to unblock application on MacOS."></kbd>
 </details>
 
 ### Windows
