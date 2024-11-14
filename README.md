@@ -81,24 +81,29 @@ above guide.
 
 ### Converting Seurat objects to `.h5ad` files
 
-By default, the `.h5ad` files created by the standard Seurat -> Anndata
+By default, the `.h5ad` files created by the standard Seurat to Anndata
 conversion process (detailed
 [here](https://mojaveazure.github.io/seurat-disk/articles/convert-anndata.html))
 contain only the highly variable genes, and therefore other genes cannot be
-annotated in `CELLxGENE`. This can be fixed by replacing the data stored in the
-`scale.data` slot of the Seurat object with the entire gene expression matrix.
-This object can then be converted to a `.h5ad` file using the process detailed
-in the link above. Putting this together:
+annotated in `CELLxGENE`. This can be fixed by removing the `scale.data` slot
+of the Seurat object (along with the count data, for memory reasons) with the
+`DietSeurat` function.  This object can then be converted to a `.h5ad` file
+using the process detailed in the link above. Putting this together:
 
 ```{r}
 # For each Seurat object you want to include in Portable-CELLxGENE:
 # Assume Seurat object is called "cells"
 library(Seurat)
 library(SeuratDisk)
-cells@assays$RNA@scale.data <- as.matrix(GetAssayData(cells))
+# Remove everything except data slot and UMAP reduction
+cells <- DietSeurat(cells, scale.data = FALSE, counts = FALSE,
+                        dimreducs = "umap")
 SaveH5Seurat(object = cells, filename = "cells.h5Seurat")
 Convert(source = "cells.h5Seurat", dest = "h5ad")
 ```
+
+Remember that you must have calculated a umap reduction of your dataset to give
+Portable-CELLxGENE something to plot!
 
 ## How to use CELLxGENE
 
