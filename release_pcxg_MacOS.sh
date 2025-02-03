@@ -1,4 +1,4 @@
-# Copyright (C) 2024 University College London
+# Copyright (C) 2024-2025 University College London
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,7 +18,7 @@
 #       commandline tools must then be installed via Platypus' settings menu.
 #   * appdmg: Can be installed with `npm install -g appdmg`
 
-PARAMS=("<BUILD_SCRIPT>" "SIGNING_SCRIPT" "<CONDA_ENV_DIR>" "<ICON_PATH>" "<LAUNCH_CELLXGENE_SH>" "<DMG_BACKGROUND_PNG>" "<NOTARYTOOL_KEYCHAIN_PROFILE>" "<DEV_ID_APP_CERT>")
+PARAMS=("<BUILD_SCRIPT>" "SIGNING_SCRIPT" "<CONDA_ENV_DIR>" "<APP_TEMPLATE_PATH>" "<LAUNCH_CELLXGENE_SH>" "<DMG_BACKGROUND_PNG>" "<NOTARYTOOL_KEYCHAIN_PROFILE>" "<DEV_ID_APP_CERT>")
 NUM_PARAMS="${#PARAMS[@]}"
 
 if [ "$#" -ne "${NUM_PARAMS}" ]; then
@@ -30,7 +30,7 @@ fi
 BUILD_SCRIPT="$1"
 SIGNING_SCRIPT="$2"
 CONDA_ENV_TAR_GZ="$3"
-ICON_PATH="$4"
+APP_TEMPLATE_PATH="$4"
 LAUNCH_CELLXGENE_SH="$5"
 DMG_BACKGROUND_PNG="$6"
 NOTARYTOOL_KEYCHAIN_PROFILE="$7"
@@ -50,7 +50,7 @@ mkdir "${OUT_DIR}"
 cd "${OUT_DIR}"
 
 echo "RUNNING build_script_MacOS.sh"
-sh ../"${BUILD_SCRIPT}" ../"${CONDA_ENV_TAR_GZ}" ../"${ICON_PATH}" ../"${LAUNCH_CELLXGENE_SH}"
+sh ../"${BUILD_SCRIPT}" ../"${CONDA_ENV_TAR_GZ}" ../"${APP_TEMPLATE_PATH}" ../"${LAUNCH_CELLXGENE_SH}"
 
 echo "RUNNING sign_and_bundle_app.sh"
 sh ../"${SIGNING_SCRIPT}" ../"${DMG_BACKGROUND_PNG}" "${NOTARYTOOL_KEYCHAIN_PROFILE}" "${DEV_ID_APP_CERT}"

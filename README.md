@@ -147,27 +147,51 @@ All contributors are expected to adhere to our
 
 ### MacOS
 
-#### Building
+The process on MacOS is split into two parts: building the `.app` directory
+(`build_pcxg_MacOS.sh`) and releasing it (bundling it into an installer and
+signing the result, `sign_pcxg_MacOS.sh`). The release script
+(`release_pcxg_MacOS.sh`) runs the build and signing scripts consecutively.
 
 To test modifications to Portable-CELLxGENE, it is sufficient to run the build
-script and not codesign the output. We need to pass the script the paths to
-the:
+script (`build_pcxg_MacOS.sh`) and not release the output.
 
-* conda environment that will be bundled with the software (use the one in `Portable-CELLxGENE.app/Contents/Resources/pcxg_conda_env_MacOS`)
-* `.icns` file for the app's icon
-* `launch_cellxgene.sh`
+#### Building
+
+The conda environment should be updated with a new version number (and
+copyright years if necessary) in the `modified_cellxgene_gateway` version of
+`CELLxGENE-Gateway` (available
+[here](https://github.com/george-hall-ucl/modified_cellxgene_gateway)). This
+information is stored in `version_number.js` and `copyright.js` within
+`cellxgene_gateway/static/js`, respectively. The conda environment should then
+be created and packaged into a `.tar.gz` archive using
+`create_conda_env_pcxg_conda_env_MacOS_arm64.sh` and
+`create_conda_env_pcxg_conda_env_MacOS_x64.sh` (for Apple-silicon and
+Intel-based processors, respectively). These `tar.gz` archives should be
+uploaded to the
+[Portable-CELLxGENE-assets](https://github.com/george-hall-ucl/Portable-CELLxGENE-assets)
+repository.
+
+The `Portable-CELLxGENE.app` template is also required, available
+[here](https://github.com/george-hall-ucl/Portable-CELLxGENE-assets/releases/download/v1.5.1/Portable-CELLxGENE_template.zip).
+Unzip this file, then, in Finder, right-click on the extracted `.app` directory
+and select `Show Package Contents`. Edit `Contents/Info.plist` in Xcode
+(right-click -> Open with -> Xcode) and update the version number (and
+copyright years if necessary).
+
+Once both the conda environment has been built and archived as a `.tar.gz` and
+the template `.app` directory has been downloaded and updated,
+`build_pcxg_MacOS.sh` can be run. It require the paths to:
+
+* The conda environment `.tar.gz`;
+* The template `.app` directory;
+* The `launch_cellxgene.sh` script.
 
 ```console
-sh build_pcxg_MacOS.sh ./path/to/conda/environment ./path/to/app_icon.icns ./path/to/launch_cellxgene.sh
+sh build_pcxg_MacOS.sh ./path/to/conda/environment ./path/to/template.app ./path/to/launch_cellxgene.sh
 ```
 
-The build process will output:
-
-* A `.app` directory containing the application.
-* A directory containing a copy of the conda environment that will be bundled
-  with the software.
-* A `.tar.gz` compressed archive of the conda environment directory.
-* A copy of the `launch_cellxgene.sh` script.
+The build process will produce a `.app` directory with the conda environment
+packaged inside.
 
 #### Signing
 
@@ -186,14 +210,14 @@ sh sign_pcxg_MacOS.sh ./path/to/dmg_background.png "name of app-specific passwor
 The signing script will output a `.dmg` disk image that has been signed and
 notarized to allow easy installation.
 
-#### Releasing
+#### Releasing (building + signing)
 
-The release script runs the build and signing scripts consecutively.
+The building and signing steps can be run consecutively using `release_pcxg_MacOS.sh`.
 
 ```console
 sh release_pcxg_MacOS.sh \
     ./path/to/conda/environment \
-    ./path/to/app_icon.icns \
+    ./path/to/template.app \
     ./path/to/launch_cellxgene.sh \
     ./path/to/dmg_background.png \
     "name of app-specific password for notarytool" \
@@ -238,7 +262,7 @@ scripts.
 
 ## Licensing
 
-Copyright (C) 2023-2024 University College London
+Copyright (C) 2023-2025 University College London
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
