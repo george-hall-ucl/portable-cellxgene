@@ -15,7 +15,7 @@
 
 # Need conda-pack installed
 
-ENV_NAME="pcxg_conda_env_MacOS_arm64_build"
+ENV_NAME=$1
 conda create -y -n "$ENV_NAME" python=3.11
 
 # Activate new conda env
