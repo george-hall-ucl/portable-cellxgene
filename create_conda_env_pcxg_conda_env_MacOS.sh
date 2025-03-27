@@ -23,7 +23,7 @@ eval "$(conda shell.bash hook)"
 conda activate "$ENV_NAME"
 
 # Install modified version of CELLxGENE-Gateway
-pip install --no-cache-dir git+https://github.com/george-hall-ucl/modified_cellxgene_gateway.git
+pip install --no-cache-dir git+https://github.com/george-hall-ucl/modified_cellxgene_gateway.git@jit_removal_bugfix_cxg130
 patch $CONDA_PREFIX/lib/python3.11/site-packages/server/common/compute/estimate_distribution.py < estimate_distribution_jit_removal_patch.txt
 
 conda deactivate
